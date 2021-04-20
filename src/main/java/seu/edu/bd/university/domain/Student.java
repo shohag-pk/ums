@@ -20,6 +20,8 @@ public class Student {
     @GeneratedValue(strategy= GenerationType.SEQUENCE)
     private long id;
 
+    @Column(unique = true)
+    private long studentId;
 
     private String studentName;
 

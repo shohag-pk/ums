@@ -20,8 +20,10 @@ public class Course implements Serializable {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id;
 
+    @Column(unique = true)
     private String courseCode;
 
+    @Column(unique = true)
     private String courseName;
 
     private int courseTotalCredit;
@@ -33,4 +35,9 @@ public class Course implements Serializable {
     @JsonIgnore
     private List<Student> students;
 
+    public Course(int courseTotalCredit, String courseCode, String courseName) {
+        this.courseCode = courseCode;
+        this.courseName = courseName;
+        this.courseTotalCredit = courseTotalCredit;
+    }
 }
